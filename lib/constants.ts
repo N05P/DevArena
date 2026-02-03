@@ -1,4 +1,4 @@
-export const events = [
+export const event = [
     {
         slug: "react-conf-2024",
         image: "/images/event1.png",
