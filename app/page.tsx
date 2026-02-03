@@ -2,14 +2,13 @@ import React from 'react'
 import ExploreButton from "@/components/ExploreButton";
 import EventCard from "@/components/EventCard";
 import {IEvent} from "@/database/event.model";
-import {event} from "@/lib/constants";
 const BASE_URI= process.env.NEXT_PUBLIC_BASE_URI
 
 
 const Page = async() => {
 
-    // const response =await  fetch(`${BASE_URI}/api/events`)
-    // const {event} = await  response.json();
+    const response =await  fetch(`${BASE_URI}/api/events`)
+    const {event} = await  response.json();
 
 
     return (
