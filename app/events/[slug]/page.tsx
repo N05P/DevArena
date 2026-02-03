@@ -45,7 +45,7 @@ const Page = async({params}:{params:Promise<{slug:string}>}) => {
 
     const response = await fetch(`${BASE_URL}/api/events/${slug}`);
 
-    const {event:{description,image,overview,date,time,location,mode,agenda,audience,tags,organizer}} = await response.json();
+    const {event:{description,image,overview,date,time,location,mode,agenda,audience,tags,organizer,_id}} = await response.json();
 
     if(!description) return notFound();
 
@@ -89,7 +89,7 @@ const Page = async({params}:{params:Promise<{slug:string}>}) => {
                         {booking >0 ?
                             (<p className='text-sm'>Join {booking} people who have already booked their spot!</p>)
                         :(<p className='text-sm'>Be the first to book your spot!</p>)}
-                        <BookEvent/>
+                        <BookEvent eventId={_id} slug={slug}/>
                     </div>
                 </aside>
             </div>
